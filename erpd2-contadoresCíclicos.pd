@@ -1,0 +1,118 @@
+#N canvas 440 80 437 542 10;
+#X obj 66 449 bng 15 250 50 0 empty empty sample1 17 7 0 10 -262144
+-1 -1;
+#X obj 145 449 bng 15 250 50 0 empty empty sample2 17 7 0 10 -262144
+-1 -1;
+#X obj 225 449 bng 15 250 50 0 empty empty sample3 17 7 0 10 -262144
+-1 -1;
+#N canvas 0 23 747 427 sonidosERPD 0;
+#X obj 32 126 soundfiler;
+#X obj 32 176 soundfiler;
+#X obj 32 226 soundfiler;
+#X msg 32 108 read -resize erpd2-uprise/sub.wav sample1;
+#X msg 32 158 read -resize erpd2-uprise/ride.wav sample2;
+#X msg 32 208 read -resize erpd2-uprise/synth.wav sample3;
+#X obj 32 34 loadbang;
+#X obj 32 71 t b b b;
+#X obj 352 156 *~ 0.7;
+#X obj 352 192 dac~;
+#X obj 352 108 tabplay~ sample1;
+#X obj 472 108 tabplay~ sample2;
+#X obj 592 108 tabplay~ sample3;
+#X obj 352 71 inlet;
+#X obj 472 71 inlet;
+#X obj 592 71 inlet;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sample1 96000 float 2;
+#X coords 0 1 96000 -1 100 70 1 0 0;
+#X restore 32 300 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sample2 96000 float 2;
+#X coords 0 1 96000 -1 100 70 1 0 0;
+#X restore 142 300 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sample3 96000 float 2;
+#X coords 0 1 96000 -1 100 70 1 0 0;
+#X restore 252 300 graph;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X connect 7 0 3 0;
+#X connect 7 1 4 0;
+#X connect 7 2 5 0;
+#X connect 8 0 9 0;
+#X connect 8 0 9 1;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 8 0;
+#X connect 13 0 10 0;
+#X connect 14 0 11 0;
+#X connect 15 0 12 0;
+#X restore 66 478 pd sonidosERPD;
+#X f 27;
+#X obj 30 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 30 131 metro 250;
+#X obj 99 106 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 99 210 + 1;
+#X obj 184 126 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 184 210 + 1;
+#X obj 200 305 f;
+#X obj 230 305 + 1;
+#X obj 200 324 %, f 12;
+#X obj 269 146 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
+#X obj 269 210 + 1;
+#X obj 115 305 f;
+#X obj 145 305 + 1;
+#X obj 115 324 %, f 12;
+#X obj 30 305 f;
+#X obj 60 305 + 1;
+#X obj 30 324 %, f 12;
+#X obj 30 372 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 1;
+#X obj 30 392 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 2;
+#X obj 30 352 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 218 372 sel 0;
+#X obj 258 372 sel 0;
+#X obj 298 372 sel 0;
+#X obj 20 23 cnv 15 250 22 empty empty ERPD-2/Contadores-cíclicos
+10 12 0 14 -159719 -794 0;
+#X text 29 48 Tres contadores de diferentes duraciones;
+#X text 28 61 [iom!] \, 2020;
+#X connect 0 0 3 0;
+#X connect 1 0 3 1;
+#X connect 2 0 3 2;
+#X connect 4 0 5 0;
+#X connect 5 0 18 0;
+#X connect 5 0 15 0;
+#X connect 5 0 10 0;
+#X connect 6 0 7 0;
+#X connect 7 0 20 1;
+#X connect 8 0 9 0;
+#X connect 9 0 17 1;
+#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 1;
+#X connect 12 0 22 0;
+#X connect 12 0 26 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 1;
+#X connect 15 0 16 0;
+#X connect 15 0 17 0;
+#X connect 16 0 15 1;
+#X connect 17 0 21 0;
+#X connect 17 0 25 0;
+#X connect 18 0 19 0;
+#X connect 18 0 20 0;
+#X connect 19 0 18 1;
+#X connect 20 0 23 0;
+#X connect 20 0 24 0;
+#X connect 24 0 0 0;
+#X connect 25 0 1 0;
+#X connect 26 0 2 0;
+#X coords 0 542 1 541 85 60 0;
