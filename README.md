@@ -1,11 +1,21 @@
-# ERPD-2
-Patches de la segunda temporada de Experimentos Rítmicos en Pure Data
+# ERPD-videoseries
 
-1-contadoresCíclicos: Tres contadores de diferentes duraciones
+Patches de la miniserie _Experimentos Rítmicos en Pure Data_
 
-2-contadoresAlternados: Tres contadores que se suceden
+Tutoriales disponibles en [nuestro canal de Youtube](https://www.youtube.com/channel/UCuFw1TQVM_aQtOeNV6yOQQw?view_as=subscriber/ "iomfanzine @ YouTube")
 
-3-secuenciadorDeNiveles: Tres contadores que se suceden con diferentes modos de disparo (primer bang, todos o ninguno)
+* **ERPD-1**
 
-Videos disponibles en: https://www.youtube.com/channel/UCuFw1TQVM_aQtOeNV6yOQQw
-[iom!], 2020
+    1.2 disparadorASCII
+
+    1.3 secuenciador
+
+    1.4 secuenciador-prob
+
+* **ERPD-2**
+
+    2.1 contadoresCíclicos
+
+    2.2 contadoresAlternados
+
+    2.3 secuenciadorDeNiveles
