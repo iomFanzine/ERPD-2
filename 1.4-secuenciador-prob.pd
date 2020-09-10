@@ -1,7 +1,7 @@
-#N canvas 65 54 411 430 10;
+#N canvas 65 54 411 407 10;
 #X obj 20 23 cnv 15 250 22 empty empty ERPD-1.4/secuenciador-prob 10
 12 0 14 -105728 -794 0;
-#X text 28 74 [iom!] \, 2020;
+#X text 28 61 [iom!] \, 2020;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array sample1 100 float 3;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -9,30 +9,29 @@
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0;
 #X coords 0 1 100 -1 200 140 1;
-#X restore 146 252 graph;
-#X obj 30 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 146 232 graph;
+#X obj 30 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 30 237 tabplay~ sample1;
-#X obj 30 258 *~ 0.7;
-#X obj 30 279 dac~;
-#X obj 30 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 30 132 metro 250;
-#X text 29 48 Un sample activado por un secuenciador de pasos con probabilidad
+#X obj 30 217 tabplay~ sample1;
+#X obj 30 238 *~ 0.7;
+#X obj 30 259 dac~;
+#X obj 30 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 30 153 bang;
-#X obj 30 174 random 100;
-#X obj 30 195 moses 40;
-#X text 85 195 <- 40% de probabilidad;
-#X obj 146 153 soundfiler;
-#X msg 146 132 read -resize ../sonidos/s1.wav sample1;
+#X obj 30 112 metro 250;
+#X obj 30 133 bang;
+#X obj 30 154 random 100;
+#X obj 30 175 moses 40;
+#X text 85 175 <- 40% de probabilidad;
+#X obj 146 133 soundfiler;
+#X msg 146 112 read -resize ../sonidos/s1.wav sample1;
+#X text 29 48 Un sample activado por probabilidad;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
 #X connect 5 0 6 1;
 #X connect 7 0 8 0;
-#X connect 8 0 10 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
 #X connect 10 0 11 0;
-#X connect 11 0 12 0;
-#X connect 12 0 3 0;
-#X connect 15 0 14 0;
+#X connect 11 0 3 0;
+#X connect 14 0 13 0;
