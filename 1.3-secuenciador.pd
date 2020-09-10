@@ -1,0 +1,79 @@
+#N canvas 350 78 460 485 10;
+#X obj 20 23 cnv 15 250 22 empty empty ERPD-1.3/secuenciador 10 12
+0 14 -105728 -794 0;
+#X text 28 61 [iom!] \, 2020;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sample1 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 196 301 graph;
+#X obj 70 142 float;
+#X obj 110 142 + 1;
+#X obj 70 163 mod 4;
+#X floatatom 20 194 5 0 0 0 - - -;
+#X obj 70 213 sel 0;
+#X obj 70 234 spigot, f 8;
+#X obj 70 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 70 286 tabplay~ sample1;
+#X obj 70 307 *~ 0.7;
+#X obj 70 328 dac~;
+#X obj 115 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 140 234 spigot, f 8;
+#X obj 140 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 185 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 234 spigot, f 8;
+#X obj 210 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 255 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 280 234 spigot, f 8;
+#X obj 280 255 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 325 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 70 102 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 70 122 metro 250;
+#X obj 140 213 sel 1;
+#X obj 210 213 sel 2;
+#X obj 280 213 sel 3;
+#X text 29 48 Un sample activado por un secuenciador de pasos;
+#X obj 196 143 soundfiler;
+#X msg 196 122 read -resize ../sonidos/s1.wav sample1;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 1;
+#X connect 5 0 6 0;
+#X connect 5 0 7 0;
+#X connect 5 0 25 0;
+#X connect 5 0 26 0;
+#X connect 5 0 27 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 11 0 12 1;
+#X connect 13 0 8 1;
+#X connect 14 0 15 0;
+#X connect 15 0 10 0;
+#X connect 16 0 14 1;
+#X connect 17 0 18 0;
+#X connect 18 0 10 0;
+#X connect 19 0 17 1;
+#X connect 20 0 21 0;
+#X connect 21 0 10 0;
+#X connect 22 0 20 1;
+#X connect 23 0 24 0;
+#X connect 24 0 3 0;
+#X connect 25 0 14 0;
+#X connect 26 0 17 0;
+#X connect 27 0 20 0;
+#X connect 30 0 29 0;
