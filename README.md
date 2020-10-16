@@ -21,3 +21,4 @@ Tutoriales disponibles en [nuestro canal de Youtube](https://www.youtube.com/cha
     2.3 secuenciadorDeNiveles - Tres contadores que se suceden con diferentes opciones de diparo: primer bang, todos o ninguno.
     
 ![secuenciador de pasos](erpd1-3.gif)
+![contadores alternados](erpd2-2.gif)
